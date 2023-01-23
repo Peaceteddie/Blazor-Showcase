@@ -1,0 +1,38 @@
+﻿@inject IJSRuntime js
+
+<div id="page-one" class="page position-absolute" />
+<div class="d-flex container text-shade position-relative mt-5 pt-5">
+	<div class="gap-5 vstack">
+		<h1 id="header-info" class="m-auto my-5 py-5" onclick="@fetch(@"page-two")">
+			Who am I?
+		</h1>
+		<div class="slab me-5">
+			<p class="fs-3">I am a creator.</p>
+		</div>
+		<div class="slab me-2">
+			<p class="fs-3 ">I am a designer.</p>
+		</div>
+		<div class="slab me-0">
+			<p class="fs-3 ">I am a solver.</p>
+		</div>
+	</div>
+</div>
+
+<div id="page-two" class="page position-absolute">
+	<div class="d-flex container text-shade position-relative mt-5	pt-5">
+		<h1 id="header-info-2" class="display-1 fw-normal mx-auto mt-5 pt-5">
+			Or am I?
+		</h1>
+	</div>
+</div>
+<div id="page-three" class="page position-absolute">
+	<div class="d-flex container text-shade position-relative mt-5	pt-5">
+		<h1 id="header-info-3" class="display-1 fw-normal mx-auto mt-5 pt-5">
+			Yes I am.
+		</h1>
+	</div>
+</div>
+
+@code {
+	string fetch(string target) => $"document.getElementById('{target}').scrollIntoView()";
+}

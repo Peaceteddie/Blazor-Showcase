@@ -1,0 +1,12 @@
+﻿.header-text {
+  text-shadow: 0.1rem 0.1rem 0.1rem hotpink, 0.2rem 0.2rem 0.1rem black;
+}
+
+a:hover {
+  filter: brightness(130%);
+  transform: scale(1.01);
+}
+
+.pink-text {
+  text-shadow: 0.1rem 0.1rem 0.1rem hotpink;
+}

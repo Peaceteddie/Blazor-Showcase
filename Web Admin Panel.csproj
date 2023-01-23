@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<RootNamespace>Web_Admin_Panel</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Remove="compilerconfig.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Shared\Header.razor.scss" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Shared\Header.razor.scss" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="compilerconfig.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="BuildWebCompiler2022" Version="1.14.10" />
+	</ItemGroup>
+</Project>

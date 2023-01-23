@@ -1,0 +1,116 @@
+﻿@import "../wwwroot/css/bootstrap";
+
+$page-bg: "https://img5.arthub.ai/user-uploads/f711c55f9bf317c8f07090c6f77de3cfc098f67d/e2edba71-87df-45b1-88ec-327daf9eabde/ah3-e95163c7c373.jpeg";
+$test-bg: "https://cdn.domestika.org/c_fill,dpr_auto,f_auto,h_630,q_auto,w_1200/v1647949550/blog-post-open-graph-covers/000/010/352/10352-original.jpg?1647949550";
+
+$smallshade: 1px 1px 1px black;
+$extrashade: 5px 5px 5px black;
+$defaultshade: 2px 2px 2px var(--bs-info);
+
+$halfdark: brightness(75%);
+$bgdropshadow: drop-shadow(0px 5px 5px black);
+
+bground {
+    background: fixed no-repeat center/100%;
+    filter: $bgdropshadow;
+}
+
+#page-one {
+    @extend bground;
+    background-image: url($page-bg);
+    top: 0px;
+    filter: $halfdark $bgdropshadow blur(5px);
+    -webkit-mask-image: linear-gradient(70deg, black 85%, transparent);
+    z-index: -1;
+}
+
+#page-two {
+    @extend bground;
+    background-image: url($page-bg);
+    top: 100vh;
+    z-index: -2;
+}
+
+#page-three {
+    @extend bground;
+    background-image: url($test-bg);
+    top: 200vh;
+    z-index: -3;
+}
+
+#header-info {
+    color: hotpink;
+    text-shadow: $defaultshade;
+}
+
+#header-info:hover {
+    text-shadow: $defaultshade, $extrashade;
+}
+
+
+#header-info-2 {
+    $shadow: null;
+
+    @for $i from 1 through 8 {
+        $middle: $i * 1px $i * 1px if($i % 2 == 0, hotpink, var(--bs-info));
+        $shadow: append($shadow, $middle, "comma");
+    }
+
+    color: magenta;
+    text-shadow: $shadow;
+}
+
+#header-info-2:hover {
+    transform: scale(3);
+}
+
+#header-info-3 {
+    animation: rgb 5s linear infinite;
+}
+
+@keyframes rgb {
+    @for $i from 0 through 360 {
+        $shadow: null;
+        $degree: $i * 1deg;
+        $selector: $i / 3.6;
+
+        #{$selector}% {
+            color: hsl($degree, 100%, 50%);
+
+            @for $j from 1 through 50 {
+                $shadow: append($shadow, $j * 1px $j * 1px hsl($i - ($j * 5) % 360 * 1deg, 100%, 50%), "comma");
+            }
+
+            text-shadow: $shadow;
+        }
+    }
+}
+
+
+.page {
+    left: 0px;
+    height: 100vh;
+    width: 99.1vw;
+}
+
+.slab {
+    @extend .ms-auto;
+    @extend .px-5;
+    @extend .text-info;
+    @extend .text-end;
+    @extend .bg-danger;
+    @extend .rounded-5;
+    @extend .bg-opacity-50;
+    @extend .align-self-center
+}
+
+.slab:hover {
+    @extend .col-3;
+    @extend .d-block;
+    @extend .text-center;
+    filter: brightness(150%);
+}
+
+.text-shade p {
+    text-shadow: $smallshade;
+}

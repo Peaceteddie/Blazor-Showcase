@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Pages/FirstPage.razor.css",
+    "inputFile": "Pages/FirstPage.razor.scss"
+  },
+  {
+    "outputFile": "Shared/Header.razor.css",
+    "inputFile": "Shared/Header.razor.scss"
+  }
+]

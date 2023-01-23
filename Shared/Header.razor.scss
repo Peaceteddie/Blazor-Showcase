@@ -1,0 +1,17 @@
+﻿$line: .1rem;
+$blur: .1rem;
+$pinktext: $line $line $blur hotpink;
+$extrashade: $line * 2 $line * 2 $blur black;
+
+.header-text {
+    text-shadow: $pinktext, $extrashade;
+}
+
+a:hover {
+    filter:brightness(130%);
+    transform: scale(1.01);
+}
+
+.pink-text {
+    text-shadow: $pinktext;
+}
